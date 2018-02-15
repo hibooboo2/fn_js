@@ -16,32 +16,32 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/StatMetrics'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./StatMetrics'));
   } else {
     // Browser globals (root is window)
     if (!root.FnJs) {
       root.FnJs = {};
     }
-    root.FnJs.Log = factory(root.FnJs.ApiClient);
+    root.FnJs.Stat = factory(root.FnJs.ApiClient, root.FnJs.StatMetrics);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, StatMetrics) {
   'use strict';
 
 
 
 
   /**
-   * The Log model module.
-   * @module model/Log
+   * The Stat model module.
+   * @module model/Stat
    * @version 0.2.4
    */
 
   /**
-   * Constructs a new <code>Log</code>.
-   * @alias module:model/Log
+   * Constructs a new <code>Stat</code>.
+   * @alias module:model/Stat
    * @class
    */
   var exports = function() {
@@ -52,35 +52,34 @@
   };
 
   /**
-   * Constructs a <code>Log</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Stat</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Log} obj Optional instance to populate.
-   * @return {module:model/Log} The populated <code>Log</code> instance.
+   * @param {module:model/Stat} obj Optional instance to populate.
+   * @return {module:model/Stat} The populated <code>Stat</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('call_id')) {
-        obj['call_id'] = ApiClient.convertToType(data['call_id'], 'String');
+      if (data.hasOwnProperty('timestamp')) {
+        obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Date');
       }
-      if (data.hasOwnProperty('log')) {
-        obj['log'] = ApiClient.convertToType(data['log'], 'String');
+      if (data.hasOwnProperty('metrics')) {
+        obj['metrics'] = StatMetrics.constructFromObject(data['metrics']);
       }
     }
     return obj;
   }
 
   /**
-   * Call UUID ID
-   * @member {String} call_id
+   * @member {Date} timestamp
    */
-  exports.prototype['call_id'] = undefined;
+  exports.prototype['timestamp'] = undefined;
   /**
-   * @member {String} log
+   * @member {module:model/StatMetrics} metrics
    */
-  exports.prototype['log'] = undefined;
+  exports.prototype['metrics'] = undefined;
 
 
 

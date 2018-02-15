@@ -33,15 +33,12 @@ var opts = {
   'cursor': "cursor_example", // String | Cursor from previous response.next_cursor to begin results after, if any.
   'perPage': 56 // Number | Number of results to return, defaults to 30. Max of 100.
 };
+apiInstance.appsAppRoutesGet(app, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppRoutesGet(app, opts, callback);
 ```
 
 ### Parameters
@@ -84,15 +81,12 @@ var app = "app_example"; // String | name of the app.
 
 var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
 
+apiInstance.appsAppRoutesPost(app, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppRoutesPost(app, body, callback);
 ```
 
 ### Parameters
@@ -133,15 +127,12 @@ var app = "app_example"; // String | Name of app for this set of routes.
 
 var route = "route_example"; // String | Route name
 
+apiInstance.appsAppRoutesRouteDelete(app, route).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.appsAppRoutesRouteDelete(app, route, callback);
 ```
 
 ### Parameters
@@ -182,15 +173,12 @@ var app = "app_example"; // String | Name of app for this set of routes.
 
 var route = "route_example"; // String | Route name
 
+apiInstance.appsAppRoutesRouteGet(app, route).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppRoutesRouteGet(app, route, callback);
 ```
 
 ### Parameters
@@ -233,15 +221,12 @@ var route = "route_example"; // String | route path.
 
 var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
 
+apiInstance.appsAppRoutesRoutePatch(app, route, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppRoutesRoutePatch(app, route, body, callback);
 ```
 
 ### Parameters
@@ -285,15 +270,12 @@ var route = "route_example"; // String | route path.
 
 var body = new FnJs.RouteWrapper(); // RouteWrapper | One route to post.
 
+apiInstance.appsAppRoutesRoutePut(app, route, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppRoutesRoutePut(app, route, body, callback);
 ```
 
 ### Parameters

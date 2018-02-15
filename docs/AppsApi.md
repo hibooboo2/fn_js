@@ -27,15 +27,12 @@ var apiInstance = new FnJs.AppsApi();
 
 var app = "app_example"; // String | Name of the app.
 
+apiInstance.appsAppDelete(app).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.appsAppDelete(app, callback);
 ```
 
 ### Parameters
@@ -73,15 +70,12 @@ var apiInstance = new FnJs.AppsApi();
 
 var app = "app_example"; // String | name of the app.
 
+apiInstance.appsAppGet(app).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppGet(app, callback);
 ```
 
 ### Parameters
@@ -121,15 +115,12 @@ var app = "app_example"; // String | name of the app.
 
 var body = new FnJs.AppWrapper(); // AppWrapper | App to post.
 
+apiInstance.appsAppPatch(app, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsAppPatch(app, body, callback);
 ```
 
 ### Parameters
@@ -170,15 +161,12 @@ var opts = {
   'cursor': "cursor_example", // String | Cursor from previous response.next_cursor to begin results after, if any.
   'perPage': 56 // Number | Number of results to return, defaults to 30. Max of 100.
 };
+apiInstance.appsGet(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsGet(opts, callback);
 ```
 
 ### Parameters
@@ -217,15 +205,12 @@ var apiInstance = new FnJs.AppsApi();
 
 var body = new FnJs.AppWrapper(); // AppWrapper | App to post.
 
+apiInstance.appsPost(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.appsPost(body, callback);
 ```
 
 ### Parameters
